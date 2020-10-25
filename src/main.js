@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import htmlToPdf from '@/utils/htmlToPdf'
+import './style/base.css' // 初始化样式
 
 import { Button, Menu, MenuItem, MenuItemGroup, Submenu, Table, TableColumn, Tree } from 'element-ui'
 

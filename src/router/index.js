@@ -13,32 +13,34 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     { path: '/',
-      component: Layout
-    },
-    {
-      path: '/export',
-      component: ExportPDF
-    },
-    {
-      path: '/table',
-      component: TableSpan
-    },
-    {
-      path: '/tree',
-      component: HalfCheckTree
-    },
-    {
-      path: '/upload',
-      component: upload
-      // component: () => require('@/components/upload')
-    },
-    {
-      path: '/animate',
-      component: animate
-    },
-    {
-      path: '/throttle',
-      component: throttle
+      component: Layout,
+      children: [
+        {
+          path: '/export',
+          component: ExportPDF
+        },
+        {
+          path: '/table',
+          component: TableSpan
+        },
+        {
+          path: '/tree',
+          component: HalfCheckTree
+        },
+        {
+          path: '/upload',
+          component: upload
+          // component: () => require('@/components/upload')
+        },
+        {
+          path: '/animate',
+          component: animate
+        },
+        {
+          path: '/throttle',
+          component: throttle
+        }
+      ]
     }
   ]
 })
