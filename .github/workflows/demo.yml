@@ -6,9 +6,9 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
   pull_request:
-    branches: [ dev ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,6 +37,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@master # 第二步是构建和部署，使用的 action 是JamesIves/github-pages-deploy-action。
         env:
           ACCESS_TOKEN: ${{ secrets.commit_secret }}  # must provide a access token.
-          BRANCH: dev
+          BRANCH: master
           FOLDER: dist  # folder name, when your run build and generate files.
           BUILD_SCRIPT: npm install && npm run build # 第二步需要四个环境变量，分别为 GitHub 密钥、发布分支、构建成果所在目录、构建脚本。其中，只有 GitHub 密钥是秘密变量，需要写在双括号里面，其他三个都可以直接写在文件里。
