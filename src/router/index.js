@@ -7,6 +7,7 @@ import HalfCheckTree from '../components/HalfCheckTree.vue'
 import upload from '../components/upload.vue'
 import animate from '../components/animate'
 import throttle from '../components/throttle'
+import SaKuLaTree from '../components/SaKuLaTree'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,10 @@ const router = new VueRouter({
         {
           path: '/throttle',
           component: throttle
+        },
+        {
+          path: '/sukula',
+          component: SaKuLaTree
         }
       ]
     }

@@ -23,7 +23,7 @@
           </template>
               <el-menu-item index="1-1" @click="$router.push('/animate')">animate</el-menu-item>
               <el-menu-item index="1-2" @click="$router.push('/throttle')">此行缩进对齐+防抖节流</el-menu-item>
-              <el-menu-item index="1-3">选项3</el-menu-item>
+              <el-menu-item index="1-3" @click="$router.push('/sukula')">sukula</el-menu-item>
               <el-menu-item index="1-4">选项4</el-menu-item>
           </el-submenu>
           <el-menu-item index="2">
@@ -54,6 +54,10 @@
 import picker from '@/components/area-picker/picker'
 
 export default {
+  data () {
+    return {}
+  },
+
   methods: {
     handleOpen (key, keyPath) {
       console.log(key, keyPath)
@@ -62,7 +66,7 @@ export default {
       console.log(key, keyPath)
     },
     handleClickArea () {
-      picker.show()
+      // picker.show()
     }
   }
 }
@@ -82,6 +86,7 @@ export default {
   padding: 12.5px;
   box-sizing: border-box;
   background-color: #d1fdfb;
+  border-bottom: 1px solid #03d3ff;
   .website-title {
     margin-left: 12px;
     font-size: 45px;
@@ -101,6 +106,7 @@ export default {
   display: flex;
 }
 .layout-content {
+  position: relative;
   flex: 1;
   background-color: #fff;
   overflow-y: auto;
