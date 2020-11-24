@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.4.4",
-    "element-ui": "^2.13.2",
+    "element-ui": "^2.14.1",
     "html2canvas": "^1.0.0-rc.5",
     "jspdf": "^1.5.3",
     "less-loader": "^6.1.0",

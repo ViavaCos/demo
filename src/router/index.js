@@ -44,6 +44,10 @@ const router = new VueRouter({
         {
           path: '/sukula',
           component: SaKuLaTree
+        },
+        {
+            path: '/login',
+            components: import('../views/login.vue')
         }
       ]
     }
