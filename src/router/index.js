@@ -45,12 +45,12 @@ const router = new VueRouter({
         {
           path: '/sukula',
           component: SaKuLaTree
-        },
-        {
-          path: '/login',
-          component: () => import('../views/login.vue')
         }
       ]
+    },
+    {
+        path: '/login',
+        component: () => import('../views/login.vue')
     }
   ]
 })
