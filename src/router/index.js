@@ -8,6 +8,7 @@ import upload from '../components/upload.vue'
 import animate from '../components/animate'
 import throttle from '../components/throttle'
 import SaKuLaTree from '../components/SaKuLaTree'
+import login from '../views/login.vue'
 
 Vue.use(VueRouter)
 
@@ -46,8 +47,8 @@ const router = new VueRouter({
           component: SaKuLaTree
         },
         {
-            path: '/login',
-            components: import('../views/login.vue')
+          path: '/login',
+          component: () => import('../views/login.vue')
         }
       ]
     }

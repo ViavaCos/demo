@@ -7,7 +7,7 @@ import router from './router'
 import htmlToPdf from '@/utils/htmlToPdf'
 import './style/base.css' // 初始化样式
 
-import { Button, Menu, MenuItem, MenuItemGroup, Submenu, Table, TableColumn, Tree } from 'element-ui'
+import { Button, Menu, MenuItem, MenuItemGroup, Submenu, Table, TableColumn, Tree, Form, FormItem, Input } from 'element-ui'
 
 Vue.use(htmlToPdf)
 
@@ -20,6 +20,9 @@ Vue.component(Submenu.name, Submenu)
 Vue.component(Table.name, Table)
 Vue.component(TableColumn.name, TableColumn)
 Vue.component(Tree.name, Tree)
+Vue.component(Form.name, Form)
+Vue.component(FormItem.name, FormItem)
+Vue.component(Input.name, Input)
 
 Vue.config.productionTip = false
 
