@@ -16,7 +16,7 @@
 
 <script>
 import axios from "axios";
-import { login } from 'src/api/index'
+import { login } from '../api/index'
 export default {
   name: "Login",
   data() {
