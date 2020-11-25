@@ -16,6 +16,7 @@
 
 <script>
 import axios from "axios";
+import { login } from 'src/api/index'
 export default {
   name: "Login",
   data() {
@@ -28,7 +29,10 @@ export default {
   },
   methods: {
     onSubmit() {
-      axios.post("http://101.37.87.30:3000/login", { ...this.userInfo });
+      let res = await login({
+          ...this.userInfo
+      })
+      console.log('结果: ', res)
     }
   }
 };
