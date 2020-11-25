@@ -28,7 +28,7 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       let res = await login({
           ...this.userInfo
       })
