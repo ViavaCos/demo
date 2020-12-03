@@ -41,6 +41,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.demo-form-inline {
+  width: 46.25rem;
+}
 .login {
   position: relative;
   min-width: 100vw;
@@ -65,6 +68,10 @@ export default {
         background: #10ff00;
         border-color: #10ff00;
       }
+    }
+
+    .el-input {
+      width: 15.416667rem;
     }
 
   }
