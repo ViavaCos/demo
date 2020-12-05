@@ -1,50 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Layout from '../components/Layout.vue'
-import ExportPDF from '../components/ExportPDF.vue'
-import TableSpan from '../components/TableSpan.vue'
-import HalfCheckTree from '../components/HalfCheckTree.vue'
-import upload from '../components/upload.vue'
-import animate from '../components/animate'
-import throttle from '../components/throttle'
-import SaKuLaTree from '../components/SaKuLaTree'
-import login from '../views/login.vue'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
     { path: '/',
-      component: Layout,
+      component: () => import('../components/Layout.vue'),
+      redirect: '/home',
       children: [
         {
+          path: '/home',
+          component: () => import('../views/home.vue')
+        },
+        {
           path: '/export',
-          component: ExportPDF
+          component: () => import('../components/ExportPDF.vue')
         },
         {
           path: '/table',
-          component: TableSpan
+          component: () => import('../components/TableSpan.vue')
         },
         {
           path: '/tree',
-          component: HalfCheckTree
+          component: () => import('../components/HalfCheckTree.vue')
         },
         {
           path: '/upload',
-          component: upload
-          // component: () => require('@/components/upload')
+          component: () => import('../components/upload.vue')
         },
         {
           path: '/animate',
-          component: animate
+          component: () => import('../components/animate')
         },
         {
           path: '/throttle',
-          component: throttle
+          component: () => import('../components/throttle')
         },
         {
           path: '/sukula',
-          component: SaKuLaTree
+          component: () => import('../components/SaKuLaTree.vue')
         }
       ]
     },
@@ -54,7 +49,7 @@ const router = new VueRouter({
     },
     {
       path: '/v',
-      component: () => import('../views/home.vue')
+      component: () => import('../views/v.vue')
     }
   ]
 })

@@ -1,8 +1,8 @@
 <template>
   <div class="layout-wrap">
     <div class="layout-header">
-      <div class="viavacos"></div>
-      <span class="website-title">ViavaCos</span>
+      <div class="viavacos" @click="$jump('/')"></div>
+      <span class="website-title" @click="$jump('/')">ViavaCos</span>
     </div>
 
     <div class="layout-main">
@@ -20,9 +20,9 @@
               <i class="el-icon-location"></i>
               <span>练武堂</span>
             </template>
-            <el-menu-item index="1-1" @click="$router.push('/animate')">animate</el-menu-item>
-            <el-menu-item index="1-3" @click="$router.push('/sukula')">sukula</el-menu-item>
-            <el-menu-item index="1-4" @click="$router.push('/login')">登录</el-menu-item>
+            <el-menu-item index="1-1" @click="$jump('/animate')">animate</el-menu-item>
+            <el-menu-item index="1-3" @click="$jump('/sukula')">sukula</el-menu-item>
+            <el-menu-item index="1-4" @click="$jump('/login')">登录</el-menu-item>
           </el-submenu>
 
           <el-submenu index="2">
@@ -30,7 +30,7 @@
               <i class="el-icon-menu"></i>
               <span>小擂台</span>
             </template>
-            <el-menu-item index="1-2" @click="$router.push('/throttle')">次行缩进对齐+防抖节流</el-menu-item>
+            <el-menu-item index="1-2" @click="$jump('/throttle')">次行缩进对齐+防抖节流</el-menu-item>
           </el-submenu>
 
           <el-submenu index="3">
@@ -90,11 +90,13 @@ export default {
   line-height: 75px;
   padding: 12.5px;
   box-sizing: border-box;
+  align-items: center;
   background-color: #d1fdfb;
   border-bottom: 1px solid #03d3ff;
   .website-title {
     margin-left: 12px;
-    font-size: 45px;
+    font-size: 30px;
+    cursor: pointer;
     text-shadow: 1px 1px 2px #00d096;
   }
 }
@@ -119,13 +121,14 @@ export default {
 }
 
 .viavacos {
-  width: 25px;
-  height: 25px;
-  border-top: 25px solid chartreuse;
-  border-left: 25px dashed rgb(0, 255, 255);
-  border-right: 25px dotted greenyellow;
-  border-bottom: 25px solid skyblue;
+  width: 15px;
+  height: 15px;
+  border-top: 15px solid chartreuse;
+  border-left: 15px dashed rgb(0, 255, 255);
+  border-right: 15px dotted greenyellow;
+  border-bottom: 15px solid skyblue;
   border-radius: 50%;
   transition: all 1s linear 0.2s;
+  cursor: pointer;
 }
 </style>

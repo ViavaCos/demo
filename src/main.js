@@ -26,6 +26,18 @@ Vue.component(Input.name, Input)
 
 Vue.config.productionTip = false
 
+Vue.prototype.$jump = (params) => {
+  let obj = {}
+  if (typeof params === 'string') {
+    obj = {
+      path: params
+    }
+  } else if (params !== null && typeof params === 'object') {
+    obj = params
+  }
+  router.push(obj, onComplete => {},onAbort => {})
+}
+
 new Vue({
   router,
   render: h => h(App)
