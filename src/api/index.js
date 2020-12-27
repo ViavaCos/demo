@@ -3,7 +3,7 @@ const baseURL = 'http://101.37.87.30:3000'
 
 export function upload (data) {
     return request({
-      url: '/upload',
+      url: baseURL + '/upload',
       method: 'post',
       data
     })
