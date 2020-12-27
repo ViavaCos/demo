@@ -54,4 +54,14 @@ const router = new VueRouter({
   ]
 })
 
+// solve Error: Loading CSS chunk chunk-016d2e83 failed.
+router.onError(error => {
+  const pattern = /Loading chunk (\w)+ failed/g
+  const isError = error.message.match(pattern)
+  const targetPath = router.history.pending.fullPath
+  if (isError) {
+    router.replace(targetPath)
+  }
+})
+
 export default router
