@@ -9,6 +9,7 @@
 export default {
   data() {
     return {
+      tree: '',
       treeColor: "#FFF", //树干颜色
       flowerColor: "rgba(255,192,203,.3)", //花色
       flowerColorDeep: "rgba(241,158,194,.5)", //花色深
@@ -27,11 +28,11 @@ export default {
   methods: {
     initTree() {
       //两个canvas
-      var tree = document.getElementById("tree");
-      tree.width = window.innerWidth;
-      tree.height = window.innerHeight;
+      this.tree = document.getElementById("tree");
+      this.tree.width = window.innerWidth;
+      this.tree.height = window.innerHeight;
       // var tCxt = tree.getContext("2d");
-      this.tCxt = tree.getContext("2d");
+      this.tCxt = this.tree.getContext("2d");
       var flower = document.getElementById("flower");
       flower.width = window.innerWidth;
       flower.height = window.innerHeight;
@@ -52,7 +53,7 @@ export default {
 
       this.cxt.shadowColor = "#FFF";
       this.cxt.shadowBlur = 10;
-      this.drawTree(tree.width / 4, this.rootTop, -Math.PI / 2, 42, 1); //执行
+      this.drawTree(this.tree.width / 4, this.rootTop, -Math.PI / 2, 42, 1); //执行
       requestAnimationFrame(this.step);
     },
 
@@ -61,7 +62,7 @@ export default {
       if (Math.random() > 0.3)
         this.fallList.push(this.flowerList[Math.floor(Math.random() * len)]); //随机取出一个，花瓣复制到飘落花瓣的列表中
 
-      this.cxt.clearRect(0, 0, tree.width, tree.height);
+      this.cxt.clearRect(0, 0, this.tree.width, this.tree.height);
       for (var i = 0; i < this.fallList.length; i++) {
         if (this.fallList[i].sy < this.limitSpeedY)
           this.fallList[i].sy += this.g;

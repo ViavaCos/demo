@@ -10,21 +10,21 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "core-js": "^3.4.4",
+    "core-js": "^3.8.1",
     "element-ui": "^2.14.1",
-    "html2canvas": "^1.0.0-rc.5",
+    "html2canvas": "^1.0.0-rc.7",
     "jspdf": "^1.5.3",
-    "less-loader": "^6.1.0",
-    "vue": "^2.6.10",
-    "vue-router": "^3.1.6"
+    "less-loader": "^6.2.0",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
+    "@vue/cli-plugin-babel": "^4.5.9",
+    "@vue/cli-plugin-eslint": "^4.5.9",
+    "@vue/cli-service": "^4.5.9",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-component": "^1.1.1",
     "babel-preset-env": "^1.7.0",
@@ -32,7 +32,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^9.5.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.12"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
