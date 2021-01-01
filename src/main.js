@@ -7,7 +7,7 @@ import router from './router'
 import htmlToPdf from '@/utils/htmlToPdf'
 import './style/base.css' // 初始化样式
 
-import { Button, Menu, MenuItem, MenuItemGroup, Submenu, Table, TableColumn, Tree, Form, FormItem, Input } from 'element-ui'
+import { Button, Menu, MenuItem, MenuItemGroup, Submenu, Table, TableColumn, Tree, Form, FormItem, Input, Message } from 'element-ui'
 
 Vue.use(htmlToPdf)
 
@@ -25,7 +25,7 @@ Vue.component(FormItem.name, FormItem)
 Vue.component(Input.name, Input)
 
 Vue.config.productionTip = false
-
+Vue.prototype.$message = Message
 Vue.prototype.$jump = (params) => {
   let obj = {}
   if (typeof params === 'string') {

@@ -31,10 +31,11 @@ export default {
   },
   methods: {
     async onSubmit() {
-      let res = await login({
-          ...this.userInfo
-      })
+      let res = await login({ ...this.userInfo })
       console.log('结果: ', res)
+      if(!res || res.code !== 200) return
+      res.message && this.$message({ type: 'success', message: res.message })
+      this.$router.replace('/home')
     }
   }
 };
