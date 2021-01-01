@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-const baseURL = 'http://101.37.87.30:3000'
+const baseURL = 'http://101.37.87.30:3000/api'
 
 export function upload (data) {
     return request({
