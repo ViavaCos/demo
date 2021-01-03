@@ -48,6 +48,10 @@ const router = new VueRouter({
       component: () => import('../views/login.vue')
     },
     {
+      path: '/register',
+      component: () => import('../views/register.vue')
+    },
+    {
       path: '/v',
       component: () => import('../views/v.vue')
     }

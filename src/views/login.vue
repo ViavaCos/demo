@@ -1,23 +1,24 @@
 <template>
+<div class="login-wrap">
   <div class="login">
-    <el-form :inline="true" :model="userInfo" class="demo-form-inline">
-      <el-form-item label="">
-        <el-input v-model="userInfo.name" type="password" placeholder="username"></el-input>
-      </el-form-item>
-      <span class="empty"></span>
-      <el-form-item label="">
+    <div class="login-form">
+      <div class="login-form-item">
+        <el-input el-input v-model="userInfo.name" type="password" placeholder="username"></el-input>
+      </div>
+      <div class="login-form-item">
         <el-input v-model="userInfo.password" type="password" placeholder="password"></el-input>
-      </el-form-item>
-      <br>
-      <el-form-item style="margin-top:6rem">
-        <el-button plain type="primary" @click="onSubmit">CHECK IN</el-button>
-      </el-form-item>
-    </el-form>
+      </div>
+
+      <div class="login-form-operation">
+        <a class="register" href="javascript:;" @click="$router.replace('/register')">Register now</a>
+        <el-button plain type="primary" class="operation" @click="onSubmit">CHECK IN</el-button>
+      </div>
+    </div>
   </div>
+</div>
 </template>
 
 <script>
-import axios from "axios";
 import { login } from '../api/index'
 export default {
   name: "Login",
@@ -45,39 +46,49 @@ export default {
 .demo-form-inline {
   width: 46.25rem;
 }
-.login {
-  position: relative;
+.login-wrap {
   min-width: 100vw;
   min-height: 100vh;
   color: #aed4d6;
   background-color: #05080d;
-  /deep/ .el-form {
+}
+.login {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  .login-form {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    .el-form-item__label {
-      color: #aed4d6!important;
-    }
 
-    .el-button--primary.is-plain {
-      &:hover,
-      &:active,
-      &:focus {
-        background: unset;
-        border-color: unset;
-        background: #10ff00;
-        border-color: #10ff00;
+    .login-form-item {
+      display: inline-block;
+      &:nth-child(2) {
+        margin-left: 1.5rem;
       }
     }
+    .login-form-operation {
+      margin-top: 10rem;
+      .register {
+        display: block;
+        color: #a5a5a5;
+      }
+      .operation {
+        margin-top: 5px;
+      }
 
-    .el-input {
-      width: 15.416667rem;
     }
-
   }
 }
 .empty {
   margin: 6rem;
+}
+
+@media screen and (max-width: 515px) {
+  .login-form-item:nth-child(2) {
+    margin-left: 0!important;
+    margin-top: 10px!important;
+  }
 }
 </style>

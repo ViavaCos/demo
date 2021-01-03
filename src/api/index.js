@@ -12,6 +12,12 @@ export function upload (data) {
 
 // 登录
 export function login (data) {
-    console.log(data)
-    return request.post(baseURL + '/login', qs.stringify({...data}) )
+  console.log(data)
+  return request.post(baseURL + '/login', qs.stringify({...data}) )
+}
+
+// 注册
+export function register (data) {
+  console.log(data)
+  return request.post(baseURL + '/register', qs.stringify({...data}) )
 }
