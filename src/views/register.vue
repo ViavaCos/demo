@@ -34,9 +34,8 @@ export default {
   },
   methods: {
     async onSubmit() {
-
         for (const key in this.userInfo) {
-            if (!+this.userInfo[key]) {
+            if (!this.userInfo[key]) {
                 this.$message({ type: 'warning', message: 'Register info cannot be empty.' })
                 return
             }

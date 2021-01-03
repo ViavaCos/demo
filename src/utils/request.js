@@ -10,7 +10,7 @@ const request = axios.create({
       'Content-Type': 'application/x-www-form-urlencoded'
   },
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  timeout: 10 * 1000 // request timeout
 })
 
 // request interceptor
@@ -70,7 +70,7 @@ request.interceptors.response.use(
         //   })
         })
       }
-      return Promise.reject(new Error(res.message || 'Error'))
+      return res
     } else {
       return res
     }

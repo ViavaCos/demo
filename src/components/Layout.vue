@@ -8,7 +8,7 @@
     <div class="layout-main">
       <div class="layout-sider">
         <el-menu
-          default-active="2"
+          :default-active="defaultActive"
           @open="handleOpen"
           @close="handleClose"
           background-color="#d1fdfb"
@@ -60,7 +60,9 @@ import picker from "@/components/area-picker/picker";
 
 export default {
   data() {
-    return {};
+    return {
+      defaultActive: '' // 默认选中
+    };
   },
 
   methods: {
@@ -130,5 +132,11 @@ export default {
   border-radius: 50%;
   transition: all 1s linear 0.2s;
   cursor: pointer;
+}
+
+@media screen and (max-width: 515px) {
+  .layout-sider {
+    display: none;
+  }
 }
 </style>
