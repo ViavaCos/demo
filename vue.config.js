@@ -1,7 +1,10 @@
+const os = require('os');
+let outputDir = os.platform().includes('win') ? 'dist' : '../../../var/www/html'
+
 
 module.exports = {
     publicPath: '',
-    outputDir: '../../../var/www/html',
+    outputDir,
     assetsDir: 'static',
     productionSourceMap: false,
     lintOnSave: false,
