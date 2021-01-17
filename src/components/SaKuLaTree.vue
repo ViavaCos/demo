@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       tree: '',
-      treeColor: "#FFF", //树干颜色
+      treeColor: "#fff", //树干颜色
       flowerColor: "rgba(255,192,203,.3)", //花色
       flowerColorDeep: "rgba(241,158,194,.5)", //花色深
       treeColor2: "rgba(255,192,203,.5)", //树枝颜色
@@ -20,7 +20,7 @@ export default {
       limitSpeedX: 1, //速度上限
       g: 0.01, //重力加速度
       gWind: 0.005, //风力加速度
-      rootTop: 800, //树起点
+      rootTop: window.innerHeight, //树起点
       flowerList: [], //樱花列表
       fallList: [] //飘落樱花列表
     };
@@ -53,7 +53,7 @@ export default {
 
       this.cxt.shadowColor = "#FFF";
       this.cxt.shadowBlur = 10;
-      this.drawTree(this.tree.width / 4, this.rootTop, -Math.PI / 2, 42, 1); //执行
+      this.drawTree(this.tree.width/4, this.rootTop, -Math.PI / 2, 42, 1); //执行
       requestAnimationFrame(this.step);
     },
 
@@ -92,8 +92,8 @@ export default {
 
     drawTree(x, y, deg, step, type) {
       var deg1 = step % 2 == 0 ? 0.1 : -0.1;
-      var x1 = x + Math.cos(deg + deg1) * (step + 4) * 0.8; //以步长来判断枝干长度 x轴偏移大一些
-      var y1 = y + Math.sin(deg + deg1) * (step - 1) * 0.8; //以步长来判断枝干长度 Y轴压缩一些
+      var x1 = x + Math.cos(deg + deg1) * (step + 5) * 0.8; //以步长来判断枝干长度 x轴偏移大一些
+      var y1 = y + Math.sin(deg + deg1) * (step - 2) * 0.8; //以步长来判断枝干长度 Y轴压缩一些
       this.tCxt.beginPath();
       this.tCxt.lineWidth = step / 3;
       this.tCxt.moveTo(x, y);
@@ -162,11 +162,13 @@ export default {
 canvas {
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
 }
 .sukula-tree {
-  width: 100%;
-  height: 100%;
+  width: calc(100vw - 200px);
+  height: 100vh;
   background-color: #000;
+  /* background: url('~@/assets/tree.jpg') no-repeat; */
+  background-size: cover;
 }
 </style>
