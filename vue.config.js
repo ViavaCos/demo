@@ -1,9 +1,7 @@
-const path = require('path')
-
 
 module.exports = {
     publicPath: '',
-    outputDir: '../../coding/dist',
+    outputDir: '../../../var/www/html',
     assetsDir: 'static',
     productionSourceMap: false,
     lintOnSave: false,
