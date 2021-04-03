@@ -98,16 +98,17 @@ export default {
 
 .v-content {
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
   overflow-x: auto;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 72px);
   background-color: #05080d;
   &::after {
     position: absolute;
     opacity: 0.4;
     content: "";
+    top: 50%;
+    transform: translateY(-50%);
     width: 175px;
     height: 175px;
     border-top: 175px solid chartreuse;
@@ -137,7 +138,7 @@ export default {
   .v-header {
     height: 20px;
     .title {
-        font-size: 16px;
+      font-size: 16px;
     }
   }
   .v-content {
@@ -146,6 +147,8 @@ export default {
       position: absolute;
       opacity: 0.4;
       content: "";
+      top: 50%;
+      transform: translateY(-50%);
       width: 50px;
       height: 50px;
       border-top: 50px solid chartreuse;
