@@ -61,6 +61,9 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    padding: 10px;
+    // box-shadow: #0ff 1px 1px 26px 20px;
+    background: #000;
 
     .login-form-item {
       display: inline-block;
