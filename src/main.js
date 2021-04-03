@@ -1,15 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
-import router from './router'
-
-import htmlToPdf from '@/utils/htmlToPdf'
-import './style/base.css' // 初始化样式
+import router from './routers'
+import './styles/base.css' // 初始化样式
 
 import { Button, Menu, MenuItem, MenuItemGroup, Submenu, Table, TableColumn, Tree, Form, FormItem, Input, Message } from 'element-ui'
-
-Vue.use(htmlToPdf)
 
 // Vue.use(ElementUI)
 Vue.component(Button.name, Button)

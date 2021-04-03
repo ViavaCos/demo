@@ -53,7 +53,7 @@ export default {
 
 <style lang="less" scoped>
 .register-wrap {
-    position: relative;
+  position: relative;
   min-width: 100vw;
   min-height: 100vh;
   color: #aed4d6;
@@ -65,6 +65,9 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    padding: 10px;
+    // box-shadow: #0ff 1px 1px 26px 20px;
+    background: #000;
 
     .register-form-item {
         display: inline-block;
@@ -85,7 +88,6 @@ export default {
         .operation {
             margin-top: 5px;
         }
-
     }
 }
 .empty {

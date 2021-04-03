@@ -1,9 +1,0 @@
-.dialog-area{
-    position: fixed;
-    top: 25%;
-    left: 50%;
-    width: 600px;
-    height: 400px;
-    margin-left: -300px;
-    background-color: chartreuse;
-}
