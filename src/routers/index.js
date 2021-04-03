@@ -12,6 +12,14 @@ const router = new VueRouter({
         {
           path: '/home',
           component: () => import('../views/home.vue')
+        },
+        {
+          path: '/article',
+          component: () => import('../views/article.vue')
+        },
+        {
+          path: '/article-details',
+          component: () => import('../views/article-details.vue')
         }
       ]
     },

@@ -1,6 +1,6 @@
 <template>
-  <div class="article-card">
-    <p class="card-title">标题</p>
+  <div class="article-card" @click="toDetail">
+    <p class="card-title text-overflow">标题</p>
     <p class="card-content">{{ "这是内容 ".repeat(150) }}</p>
   </div>
 </template>
@@ -8,6 +8,17 @@
 <script>
 export default {
   name: "ArticleCard",
+  methods: {
+    //  查看文章详情
+    toDetail() {
+      this.$router.push({
+        path: '/article-details',
+        query: {
+          article_id: 1, // 文章id
+        },
+      });
+    },
+  },
 };
 </script>
 
@@ -35,5 +46,21 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
   }
+}
+
+@media screen and (max-width: 515px) {
+  .article-card {
+    height: 150px;
+    .card-content {
+      height: 60px;
+      -webkit-line-clamp: 3;
+    }
+  }
+}
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
