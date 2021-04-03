@@ -26,7 +26,7 @@ export default {
 .article-card {
   width: 100%;
   height: 300px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   padding: 15px;
   text-align: left;
   box-shadow: #fff 0 0 10px 0px;

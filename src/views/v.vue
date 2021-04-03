@@ -1,7 +1,7 @@
 <template>
   <div class="v-layout">
     <div class="v-header">
-      <div class="left">
+      <div class="left" @click="$router.push('/home')">
         <div class="viavacos" @click="showMenu"></div>
         <div class="title">ViavaCos</div>
       </div>
@@ -107,7 +107,7 @@ export default {
 .cur-router-view {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 0;
 }
 .viavacos-back {
   position: absolute;
