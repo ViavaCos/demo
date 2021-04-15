@@ -1,23 +1,20 @@
 <template>
-  <div class="article-card" @click="toDetail">
-    <p class="card-title text-overflow">标题</p>
-    <p class="card-content">{{ "这是内容 ".repeat(150) }}</p>
+  <div class="article-card" @click="$emit('click')">
+    <p class="card-title text-overflow">{{ title }}</p>
+    <p class="card-content">
+      <slot>{{ "这是内容 ".repeat(150) }}</slot>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: "ArticleCard",
+  props:{
+    title: { type: String, default: '标题' }
+  }, 
   methods: {
-    //  查看文章详情
-    toDetail() {
-      this.$router.push({
-        path: '/article-details',
-        query: {
-          article_id: 1, // 文章id
-        },
-      });
-    },
+
   },
 };
 </script>
@@ -25,7 +22,7 @@ export default {
 <style lang="less" scoped>
 .article-card {
   width: 100%;
-  height: 300px;
+  max-height: 300px;
   margin-bottom: 15px;
   padding: 15px;
   text-align: left;
@@ -38,8 +35,9 @@ export default {
     font-size: 28px;
   }
   .card-content {
+    text-indent: 2em;
+    line-height: 1.5;
     margin-top: 20px;
-    height: 210px;
     overflow: hidden;
     font-size: 16px;
     display: -webkit-box;

@@ -10,7 +10,8 @@
         <p class="menu-title">菜单</p>
 
         <p class="menu-item" @click="$router.push('/article')">看文章</p>
-        <p class="menu-item" v-for="num in 6" :key="num">{{ '菜单项' }}</p>
+        <p class="menu-item" @click="$router.push('/regexp')">学正则</p>
+        <p class="menu-item" v-for="num in 5" :key="num">{{ '菜单项' }}</p>
       </template>
     </div>
   </div>

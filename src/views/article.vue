@@ -1,6 +1,6 @@
 <template>
   <div class="my-article">
-    <article-card v-for="num in 6" :key="num"></article-card>
+    <article-card v-for="num in 6" :key="num" @click="toDetail"></article-card>
   </div>
 </template>
 
@@ -13,6 +13,17 @@ export default {
   data() {
     return {};
   },
+  methods:{
+    //  查看文章详情
+    toDetail() {
+      this.$router.push({
+        path: '/article-details',
+        query: {
+          article_id: 1, // 文章id
+        },
+      });
+    }
+  }
 };
 </script>
 
