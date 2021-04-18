@@ -24,6 +24,10 @@ const router = new VueRouter({
         {
           path: '/regexp',
           component: () => import('../views/regexp.vue')
+        },
+        {
+          path: '/design-module',
+          component: () => import('../views/design-module')
         }
       ]
     },

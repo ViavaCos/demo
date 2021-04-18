@@ -1,14 +1,21 @@
 <template>
   <div class="article-details">
-    <h2 class="article-title">文章标题</h2>
+    <h2 class="article-title">单例模式</h2>
 
-    <p class="article-content">{{ "文章内容 ".repeat(500) }}</p>
+    <p class="article-content">
+      <code-card>
+        {{ 'var a = 10;'.repeat(100) }}
+      </code-card>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: "article-details",
+  components: {
+    'code-card': () => import('@/components/code-card')
+  },
   data() {
     return {
       id: "",
